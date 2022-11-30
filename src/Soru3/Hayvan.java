@@ -1,6 +1,6 @@
 package Soru3;
 
-public abstract class Hayvan {
+public abstract class Hayvan extends HayvanatBahcesi {
 	public String ad;
 	public int kilo;
 	public int uzunlugu;
@@ -15,6 +15,13 @@ public abstract class Hayvan {
 	}
 	
 	public abstract void sesCikar();
+
+	@Override
+	public String toString() {
+		return "Hayvan [ad=" + ad + ", kilo=" + kilo + ", uzunlugu=" + uzunlugu + ", tehlikeliMi=" + tehlikeliMi + "]";
+	}
+	
+	
 		
 	
 	

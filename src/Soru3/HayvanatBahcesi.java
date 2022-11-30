@@ -3,106 +3,72 @@ package Soru3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HayvanatBahcesi implements IHayvanatBahcesi{
+public class HayvanatBahcesi {
 	
 	
 	List<Hayvan> hayvanlar=new ArrayList<>();
-	List<MemeliHayvan> memeliHayvanlar=new ArrayList<>();
-	List<Surungen> surungenHayvanlar=new ArrayList<>();
 	
-	
-	@Override
+
 	public void bahceyeMemeliHayvanEkle(MemeliHayvan memeliHayvan) {
+		
 		hayvanlar.add(memeliHayvan);
 		System.out.println(memeliHayvan+"eklendl");
 	}
-	@Override
-	public void bahceyeSurungenEkle(Surungen surungen) {
-		// TODO Auto-generated method stub
 		
+	
+	public void bahceyeSurungenEkle(Surungen surungen) {
+		hayvanlar.add(surungen);
 	}
-	@Override
+	
+	
 	public void hayvanSesCikarsin(Hayvan hayvan) {
 		hayvan.sesCikar();
-		
+		//System.out.println(hayvan.sesCikar());
 	}
-	@Override
+		
+	
 	public void hayvaninCinsiniBul(String hayvanAdi) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void hayvanBilgileriniYazdir(String hayvanAdi) {
-		
-		if (hayvanlar.contains(hayvanAdi)) {
-			System.out.println("ad "+ hayvanAdi);
-		}else {
-			System.out.println(hayvanAdi+" isimli hayvan bulunamamýþtýr");
+		for (Hayvan hayvan : hayvanlar) {
+			if (hayvan.ad.equals(hayvanAdi)) {
+				if (hayvan instanceof MemeliHayvan) {
+					System.out.println(hayvan.ad+ " memelidir.");
+				}else if (hayvan instanceof Surungen) {
+					System.out.println(hayvan.ad + " sürüngendir");
+				}
+				}else {
+					System.out.println(hayvan.ad+ " böyle bir hayvan yoktur");
+					break;
+				}
+			
+			
 		}
 		
-		
-		
-	}
-	@Override
-	public void hayvaniHareketEttir(String hayvanAdi) {
-		
-		  
-		
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	/*public void bahceyeMemeliHayvanEkle(MemeliHayvan memeliHayvan) {
-		
-	}
-		
-	
-	public void bahceyeSurungenEkle(Surungen surungen) {
-		
-	}
-	
-	
-	public void hayvanSesCikarsin(Hayvan hayvan) {
-		hayvan.sesCikar();
-	}
-		
-	
-	public void hayvaninCinsiniBul(String hayvanAdi) {
-		
 	}
 		
 	
 	public void hayvanBilgileriniYazdir(String hayvanAdi) {
-		
+		for (Hayvan hayvan : hayvanlar) {
+			if (hayvan.ad.equals(hayvanAdi)) {
+				System.out.println(hayvan.toString());
+			}else {
+				System.out.println(hayvan.ad+ " böyle bir hayvan yok");
+			}
+		}
 	}
-	
 
 	public void hayvaniHareketEttir(String hayvanAdi) {
+		Yilan yilan=new Yilan(hayvanAdi, 444, 44440, false);
+		Aslan aslan=new Aslan(hayvanAdi, 0, 0, false);
+		Maymun maymun=new Maymun(hayvanAdi, 0, 0, false);
+		Kertenkele kertenkele=new Kertenkele(hayvanAdi, 0, 0, false);
+		kertenkele.surun();
+		yilan.surun();
+		aslan.yuru();
+		aslan.yuru();
 		
-	}*/
+	}
+		
+	
 		
 	
 	

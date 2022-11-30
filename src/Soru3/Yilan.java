@@ -15,7 +15,7 @@ public class Yilan extends Surungen {
 
 	@Override
 	public void sesCikar() {
-		System.out.println("týslýyor"+ad);
+		System.out.println( ad+ " týslýyor....");
 		
 	}
 
